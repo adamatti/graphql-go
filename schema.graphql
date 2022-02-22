@@ -1,0 +1,21 @@
+//
+// In GraphQL's type system shorthand notation.
+// (See: http://graphql.org/docs/typesystem)
+//
+
+type Query {
+  latestPost: String
+  countries(id: String): [Country]
+  states(id: String): [State]
+}
+
+type Country {
+  id: String!
+  name: String!
+  states: [State]
+}
+
+type State {
+  id: String!
+  name: String!  
+}

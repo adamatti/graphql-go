@@ -7,6 +7,7 @@ import (
 
 	"github.com/adamatti/graphql-go/db"
 	"github.com/adamatti/graphql-go/graphql"
+	"github.com/adamatti/graphql-go/graphql2"
 
 	mux "github.com/gorilla/mux"
 )
@@ -28,6 +29,7 @@ func buildRouter() *mux.Router {
 	router.HandleFunc("/countries", getCountriesHandler).Methods("GET")
 	router.HandleFunc("/states", getStatesHandler).Methods("GET")
 	router.Handle("/graphql", graphql.GetHandle())
+	router.Handle("/graphql2", graphql2.GetHandle())
 	return router
 }
 
